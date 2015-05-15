@@ -50,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+
 ROOT_URLCONF = 'shasha.urls'
 
 TEMPLATES = [

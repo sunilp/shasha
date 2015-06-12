@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+{% load staticfiles %}
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<title>Sunil Prakash</title>
+
+    <link rel="stylesheet" href="{% static "angular-material/angular-material.css" %}" type="text/css" media="screen">
+</head>
+
+    <body ng-app="angFirst">
+
+    <div ng-controller="msgCntrl">
+
+        <h1>T2{{ messagess }}</h1>
+    </div>
+
+
+    <script src="{% static  "angular/angular.js" %}"></script>
+    <script src="{% static  "angular-aria/angular-aria.js" %}"></script>
+    <script src="{% static  "angular-animate/angular-animate.js" %}"></script>
+    <script src="{% static  "angular-material/angular-material.js" %}"></script>
+
+
+    <script>
+
+    var app =  angular.module('angFirst',['ngMaterial']);
+    app.controller("msgCntrl",['$scope',function($scope){
+                   $scope.messagess = "Hello Sunil";
+                }]);
+    </script>
+
+    </body>
+
+</html>

@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'register',
+    'djangobower',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,11 +116,19 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, "static"),
 
 # )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
+
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
@@ -131,3 +140,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+BOWER_INSTALLED_APPS = (
+    'angular-material',
+    'angular'
+)

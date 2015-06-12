@@ -8,3 +8,9 @@ def home(request):
 	context = {"form":form}
 	template = "home2.html"
 	return render(request, template, context)
+
+
+def angOne(request):
+	context = {}
+	template = "angStart.html"
+	return render(request, template, context)
